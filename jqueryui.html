@@ -1,0 +1,88 @@
+ <html>
+ <head>
+    <title>Jquery</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+   <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+   <script src="jquery-ui/jquery-ui.js"></script>
+    <style type="text/css">
+     #resizable{
+     height:200px;
+     width:200px;
+     background-color:yellow;
+    }
+     #also{
+     height:200px;
+     width:200px;
+     background-color:red;
+    }
+      #draggable{
+     height:100px;
+     width:100px;
+     background-color:yellow;
+    }
+     #dropable{
+     height:300px;
+     width:300px;
+     background-color:red;
+    }
+
+    </style>
+ </head>
+ <body>
+    <div id="accordion">
+         <h3>Title1</h3>
+         <div>
+         <p>My name is Shivam Agarwal ,I am here to inform is that after 3-4 years later ,my country will recognise me and my parents by my success</p>
+     </div>
+     <h3>Title2</h3>
+     <div>
+         <p>My name is Shivam Agarwal ,I am here to inform is that after 3-4 years later ,my country will recognise me and my parents by my success</p>
+     </div>
+     <h3>Title3</h3>
+     <div>
+         <p>My name is Shivam Agarwal ,I am here to inform is that after 3-4 years later ,my country will recognise me and my parents by my success</p>
+     </div>
+     </div>
+     <ul id="sortable">
+        <li>hey</li>
+        <li>bro</li>
+        <li>do u know me</li>
+    </ul>
+     <div id="dragable">Drag Me!</div> 
+     <div style="height:100px;width:100px;background-color:blue">
+     <span>I am stuck in the box!</span></div>
+     <div id="resizable"></div>
+     <div id="also"></div>
+     <div id="draggable"></div>
+     <div id="dropable"></div>
+
+     <script type="text/javascript">
+        $("#accordion").accordion();
+        $("#sortable").sortable();
+     //$("#dragable").draggable();
+     //$("#dragable").draggable({axis:"y"});
+          $("#dragable").draggable({axis:"x"});
+          $("span").draggable({containment:"parent"});
+         // $("#resizable").resizable();
+          //$("#resizable").resizable({grid:50});
+          $("#resizable").resizable({
+            grid:50,
+            alsoResize:"#also",
+             resize: function(event,ui){
+            alert("Hello")
+          }
+              });
+          $("#also").resizable();
+          $("#draggable").draggable();
+          $("#dropable").droppable({
+            drop:function(event,ui){
+                alert("dropped!")
+            }
+          });
+     </script>
+
+
+ </body>
+
+ </html>
