@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>LOGIN PAGE</title>
+
+	</head>
+	<body>
+        <!-- <form action="txt.php" method="post" enctype="multipart/form-data">
+		<p>USERNAME: <input type='text' name="username" required></p>
+		<p>PASSWORD: <input id="ps" type='password' name="password" required><button id="click">click</button></p>
+		<p>COLLEGE ID: <input type='text' name="college_id" required></p>
+        <button id="btn" type="submit" >login</button>
+        </form> -->
+
+        <form action="txt.php" method="POST">
+                 <input type="text" name="username" placeholder="username">       
+                 <input type="text" placeholder="password" name="password">
+                 <input type="submit" value="login">
+        </form>
+        <script type="text/javascript">
+        	document.getElementById("click").onclick=function(){
+        		if(document.getElementById("ps").type=="text"){
+        			document.getElementById("ps").type="password";
+        		}
+        		else{
+        			document.getElementById("ps").type="text";
+        		}
+        	}
+document.getElementById("btn").onclick=function(){
+        alert("buton");
+}
+        </script>
+
+	</body>
+
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+      <title>
+        ajit kumar
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/e1b787a8ae.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+       <style>
+          body {
+               margin:0px;
+               padding:0px;
+			}
+
+			#head{
+            	width:100%;
+            	background-color:#EDEDED;
+            	padding:4px;
+            	height:40px;
+            	margin:1px auto;
+
+                   }
+			#pc{
+				width:50px; 
+				height:40px;
+				border-spacing:10px; 
+				border-radius:50%; 
+				float:left;
+
+			}
+			#logo{
+				font-family: cursive ;
+				float:left;
+				padding:4px; 
+				font-weight:bold;
+				margin-right:3px;
+				font-size:20px;
+                color:blue;
+			}
+			#buttoncontainer{
+				float:left;
+				padding:1px;
+				font-weight:bold;
+				font-family: cursive;
+				margin: 1px auto;
+				overflow:hidden;
+			}
+			.startButton{
+				float:left;
+                padding:2px;
+             	font-size:20px;
+                text-align: center;
+                margin-right: 15px;
+           }
+           #ps{
+           	    width:10px; 
+				height:15px; 
+				border-radius:50%; 
+				float:right;
+				margin-left:5px;
+				margin-right:5px;
+				padding:6px;
+				transition:width 2s height 2s;
+           }
+           #pe{
+                
+           	    width:250px; 
+				height:250px;
+				margin:50px auto;
+				border-radius:50%;
+				border-spacing: 100px; 
+				transition:width 4s height 4s;
+				box-shadow:3px 3px 3px 3px grey;
+           }
+           #pe:hover{
+           	width:270px;
+           	height:270px ;
+           }
+           #ps:hover{
+           	 width:32px;
+           	 height: 22px;
+           }
+           .highlightedbutton{
+               background-color: grey;
+             }
+             #np{
+             	width:340px;
+             	height:100px;
+             	margin:1px auto;
+             	text-align:center;
+                font-weight: bold;
+                font-style:italic;
+                font-size:28px;
+                background-color: grey;
+                font-family: sans-serif;
+                transition: width 2s height 2s;
+                color:blue;
+             }
+             #np:hover{
+             	height: 110px;
+             	width: 350px;
+             }
+		</style>
+    </head>
+		  <body style="text-align:center;">
+		  	<div id="head">
+		  		<image src="shivam.jpeg" id="pc" ></image>
+
+		  		<div id="logo" >
+		  			ajit kumar
+                </div>
+                <div id="buttoncontainer" >
+			        <div class="startButton active" id="home" ><i class="fa fa-home"></i>Home</div>
+			    	<div class="startButton" id="work" >Work</div>
+			    	<div class="startButton active" id="exerience" >Experience</div>
+			    	<div class="startButton active" id="education" >Education</div>
+			    	<div class="startButton active" id="skills" >Skills</div>
+			    	<div class="startButton" id="about">About</div>
+			    	<div class="startButton active" id="contact" >Contact</div>
+                </div>
+                <button><a href="https://www.instagram.com/shivama056"><i class="fab fa-instagram" id="ps"></i></a></button>
+               <button><a href="https://www.facebook.com/profile.php?id=100005228049614"><i class="fab fa-facebook" id="ps"></i></a></button> 
+               <button><a href="https://twitter.com/ShivamA44580431?s=08"><i class="fab fa-twitter" id="ps"></i></a></button>
+                <button><a href="https://www.linkedin.com/in/shivam-agarwal-285a71178"><i class="fab fa-linkedin-in" id="ps"></i></a></button>
+               <button><a href="https://github.com/shivamagarwal1999"><i class="fab fa-github" id="ps"></i></a></button>
+
+            </div>
+            <image src="shivam.jpeg" id="pe"></image>
+            <div id="np">Web Developer/Competative Programmer</div>
+                <script type="text/javascript">
+                	$(".startButton").hover(function(){
+       	 	$(this).addClass("highlightedbutton");
+       	 },function(){
+            $(this).removeClass("highlightedbutton");
+       	 });
+                </script>
+		  </body>
+  </html>
+ 

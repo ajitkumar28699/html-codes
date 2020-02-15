@@ -1,0 +1,30 @@
+  <html>
+ <head>
+    <title>ajax</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+  
+
+
+
+    </style>
+ </head>
+ <body>
+    <p></p>
+     <script type="text/javascript">
+      //  $.get("info.txt",function(data){
+        //alert(data);
+       // });
+       $.ajax("info.txt").done(function(data){
+       // alert(data);
+       $("p").html(data);
+       }).fail(function(){
+       	alert("Could not get data!");
+       });
+     </script>
+
+
+ </body>
+
+ </html>

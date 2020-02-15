@@ -1,0 +1,116 @@
+ <html>
+ <head>
+    <title>JS Bin</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+    	body{
+            font-family:sans-serif; ; 
+            padding:0;
+            margin:0;
+            }
+            #Header{
+            	width:100%;
+            	background-color:#EDEDED;
+            	padding:5px;
+            	height:29px;
+                   }
+                   #logo{
+                   	float:left;
+                   	font-weight:bold; 
+                   	padding:4px 3px;
+                   }
+             #buttoncontainer{
+             	 width:250px;
+                 margin: 0 auto;
+             }
+             .startButton{
+             	float:left;
+             	border:1px solid grey;
+             	padding:5px;
+             	font-size:16px;
+             }
+             #html{
+             	border-top-left-radius:5px;
+             	border-bottom-left-radius: 5px;
+             }
+             #output{
+             	border-top-right-radius:5px;
+             	border-bottom-right-radius: 5px;    
+             }
+             .highlightedbutton{
+               background-color: grey;
+             }
+             .active{
+             	background-color: #E8F2FF;
+             }
+             textarea{
+             	resize: none;
+             	border-top: none;
+             	border-color: grey;
+             }
+             .panel{
+             	width:50%;
+               float:left;
+               border-left: none;
+             }
+             iframe{
+             	border:none;
+             }
+             .hidden{
+             	display:none;
+             }
+     </style>
+ </head>
+ <body>
+ 	<div id="Header">
+ 	  <div id="logo">
+ 		CodePlayer
+ 	  </div>
+ 	   <div id="buttoncontainer">
+	        <div class="startButton active" id="html">HTML</div>
+	    	<div class="startButton" id="css">CSS</div>
+	    	<div class="startButton" id="javascript">JavaScript</div>
+	    	<div class="startButton active" id="output">Output</div>
+        </div>
+    </div>
+    <div id="bodycontainer">
+    	<textarea id="htmlpanel" class="panel"> <p id="para">Hello Everyone!</p>
+    	</textarea>
+    	<textarea id="csspanel" class="panel hidden"> p{color:red;}
+    	</textarea>
+    	<textarea id="javascriptpanel" class="panel hidden">document.getElementById("para").innerHTML="Hello!";
+    	</textarea>
+    	<iframe id="outputpanel" class="panel"></iframe>
+    </div>
+       <script type="text/javascript">
+       	function updateoutput(){
+       		$("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() + "</style></head><body>" + $("#htmlpanel").val() + "</body></html>");
+       		document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val()) ;
+       	}
+       	 $(".startButton").hover(function(){
+       	 	$(this).addClass("highlightedbutton");
+       	 },function(){
+            $(this).removeClass("highlightedbutton");
+       	 });
+         $(".startButton").click(function(){
+       	 	$(this).toggleClass("active");
+            $(this).removeClass("highlightedbutton")
+            ;
+            var panelid=$(this).attr("id") + "panel";
+            $("#" + panelid).toggleClass("hidden");
+            var numberofactivepanel=4- $(".hidden").length;
+             $(".panel").width(($(window).width() /numberofactivepanel) -20);
+       	 });
+       	 $(".panel").height($(window).height() - $("#Header").height() -13);
+        $(".panel").width(($(window).width() /2) -20);
+        $("iframe").contents().find("html").html($("#htmlpanel").val());
+        updateoutput();
+        $("textarea").on("change keyup paste",function(){
+        	updateoutput();
+        })
+       </script>
+
+  </body>
+
+ </html>

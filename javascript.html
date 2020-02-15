@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>JAVASCRIPT.html</title>
+<style type="text/css">
+	.circle{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    float:left;
+     margin:20px;
+  }
+  #red-circle{
+  	background-color:red;
+  }
+  #blue-circle{
+  	background-color:blue;
+  }
+  #yellow-circle{
+  	background-color:yellow;
+  }
+
+ </style>
+</head>
+<body>
+	<div class="circle" id="red-circle"> </div>
+	<div class="circle" id="blue-circle"> </div>
+	<div class="circle" id="yellow-circle"> </div>
+<button onclick="alert('hi!')">Click me</button>
+<p id="text">"Hello Mom!"</p>
+<button id="text2">Change Me</button>
+<p id="second text">Javascript is...</p>
+<button id="text3">Append me</button>
+<p id="third text"></p>
+<button id="text4">Click me please!</button>
+<p id="forth text">"Love U Darling"</p>
+<button id="text5">look changes!</button>
+<input type="text" id="textInput">
+<button id="Change it">Change it</button>
+<p id="yo">Hello My Name Is Shivam</p>
+ <p><input type="text" id="Inputmagictext"></p>
+<p><button id="magicword">Change it</button></body></p>
+<p>How many fingers do u have?</p>
+<p><select id="try">
+	<option>heloo</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	<option>6</option>
+	<option>7</option>
+	<option>8</option>
+	<option>9</option>
+    <option>10</option>
+</select>
+<button id="tryit">Guess!</button>
+	</p>
+	
+<div id="twtdiv"></div>
+<script type="text/javascript">
+
+	
+
+document.getElementById("red-circle").onclick=function(){
+
+		document.getElementById("red-circle").style.display="none";
+	}
+	document.getElementById("blue-circle").onclick=function(){
+
+		document.getElementById("blue-circle").style.display="none";
+	}
+document.getElementById("yellow-circle").onclick=function(){
+
+		document.getElementById("yellow-circle").style.display="none";
+	}
+
+	alert("Page is loaded");
+
+	document.getElementById("text2").onclick=function(){
+
+		document.getElementById("text").innerHTML="Hello Pops!";
+	}
+	document.getElementById("text3").onclick=function(){
+
+		document.getElementById("second text").innerHTML="I Think "+ document.getElementById("second text").innerHTML+"Hello Babs!";
+	}
+	document.getElementById("text4").onclick=function(){
+
+		document.getElementById("third text").innerHTML="I Think u know me!";
+	}
+	document.getElementById("text5").onclick=function(){
+
+		document.getElementById("forth text").style.color="blue";
+		document.getElementById("forth text").style.fontSize="50px";
+	}
+	document.getElementById("Change it").onclick=function(){
+        var Enter="";
+		Enter=document.getElementById("textInput").value;
+		document.getElementById("yo").innerHTML=Enter;
+	}
+	var myarray=new Array();//creates new array
+	myarray[0]="mangoes";
+	myarray[1]="oranges";
+	console.log(myarray);
+	var emptyarray=[];//creates empty array
+	console.log(emptyarray);
+    var newarray=["Hello everyone!","How are u!","Looks good!"];
+    newarray.push("Do u know me!")//adds at the end of newarray
+    newarray.splice(2,1)//it removes from position 2 ,only 1 array.
+    newarray.splice(1,2)//it removes from position 1 ,2 arrays.
+   newarray.splice(0,0,"I am back!")//it also add at position 0,before what is present at position 0 ,1 array.
+   newarray.splice(0,0,"Understood!","Great!")//it also add at position 0,before what is present at position 0 ,2 arrays.
+    console.log(newarray);
+document.getElementById("magicword").onclick=function(){
+var magicwordentered=document.getElementById("Inputmagictext").value;
+
+var newmagic="abra ca da bra";
+if(magicwordentered==newmagic){
+	alert("You got it!");
+}
+else{ 
+	alert("Tryagain!");
+ }
+}
+/*
+document.getElementById("tryit").onclick=function(){
+var randomnumber=Math.random();
+randomnumber=randomnumber * 6;
+randomnumber=Math.floor(randomnumber);
+if(document.getElementById("try").value==randomnumber)
+{
+	alert("Well Done!");
+}
+else
+{
+	alert("Try Again Bro!,Answer Is "+ randomnumber);
+}
+}*/
+/*var randomnumber=document.getElementById("try").value;
+var numberofguess=1;
+var gotit=false;
+while(gotit==false)
+{
+ var guess=Math.random();
+ guess=guess*11;
+ guess=Math.floor(guess);
+if(guess==randomnumber)
+{
+	gotit=true;
+	alert("Got it! It was a " + guess + ". It took me "+ numberofguess + " guesses." );
+}
+else
+{
+	numberofguess++;
+
+}
+}
+}*/
+function doguess(correctanswer){
+var guess=Math.random();
+ guess=guess*11;
+ guess=Math.floor(guess);
+if(guess==correctanswer)
+{
+	return (true);
+}
+else
+{
+	return (false);
+
+}
+}
+document.getElementById("tryit").onclick=function(){
+var randomnumber=document.getElementById("try").value;
+var numberofguess=1;
+var gotit=false;
+while(gotit==false)
+{
+if(doguess(randomnumber)==true)
+{
+	gotit=true;
+	alert("Got it! It was a " + randomnumber + ". It took me "+ numberofguess + " guesses." );
+}
+else
+{
+	numberofguess++;
+
+}
+}
+}
+var twtstring="";
+var twt=["Hello bro!","Do u know me!","I love u!"];
+//for (var i=0;i<5;i++)
+for(var i=0;i<twt.length;i++)
+{
+	//alert(i);
+	//alert(twt[i]);
+	twtstring= twtstring + "<p>" +twt[i] + "</p>";
+}
+document.getElementById("twtdiv").innerHTML = twtstring;
+function avg(a,b){
+	return ((a+b)/2);
+}
+var x=5;
+var y=10;
+alert(avg(x,y));
+</script>
+
+</body>
+</html>
